@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="MINT2">#93beab</color>
+    <color name="Primary_Dark">#24673b</color>
+    <color name="Mint">#80cbc4</color>
+    <color name="ColorAccent">#80cbc4</color>
+    <color name="MINT">#3cb881</color>
+    <color name="text_color_primary">#4cffffff</color>
+</resources>

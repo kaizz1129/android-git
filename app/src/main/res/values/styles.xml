@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FaPiWu_GO" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/MINT2</item>
+        <item name="colorPrimaryDark">@color/Primary_Dark</item>
+        <item name="colorAccent">@color/ColorAccent</item>
+        <item name="android:colorBackground">@color/MINT</item>
+        <item name="android:statusBarColor">@color/MINT2</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FaPiWu_GO.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="FaPiWu_GO.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
