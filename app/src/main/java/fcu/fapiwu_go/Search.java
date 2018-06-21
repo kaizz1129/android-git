@@ -1,9 +1,13 @@
 package fcu.fapiwu_go;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,92 +22,131 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Search extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    private static final int LIST_PETS = 1;
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+
         //AppBar按鈕
-        Button Search = (Button)findViewById(R.id.button1);
+        Button Search = (Button) findViewById(R.id.button1);
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , Search.class);
+                intent.setClass(Search.this, Search.class);
                 startActivity(intent);
             }
         });
-        Button Newestt = (Button)findViewById(R.id.button2);
+        Button Newestt = (Button) findViewById(R.id.button2);
         Newestt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , Newestt.class);
+                intent.setClass(Search.this, Newestt.class);
                 startActivity(intent);
             }
         });
-        Button Newestt2 = (Button)findViewById(R.id.button3);
+        Button Newestt2 = (Button) findViewById(R.id.button3);
         Newestt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , Newestt2.class);
+                intent.setClass(Search.this, Newestt2.class);
                 startActivity(intent);
             }
         });
-        Button Knowhow = (Button)findViewById(R.id.button4);
+        Button Knowhow = (Button) findViewById(R.id.button4);
         Knowhow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , Knowhow.class);
+                intent.setClass(Search.this, Knowhow.class);
                 startActivity(intent);
             }
         });
-        Button history = (Button)findViewById(R.id.button5);
+        Button history = (Button) findViewById(R.id.button5);
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , history.class);
+                intent.setClass(Search.this, history.class);
                 startActivity(intent);
             }
         });
-        Button forum = (Button)findViewById(R.id.button6);
+        Button forum = (Button) findViewById(R.id.button6);
         forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , forum.class);
+                intent.setClass(Search.this, forum.class);
                 startActivity(intent);
             }
         });
-        Button suggestion = (Button)findViewById(R.id.button7);
+        Button suggestion = (Button) findViewById(R.id.button7);
         suggestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Search.this , suggestion.class);
+                intent.setClass(Search.this, suggestion.class);
+                startActivity(intent);
+            }
+        });
+        Button welcome = (Button) findViewById(R.id.button8);
+        welcome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Search.this, Welcome.class);
+                startActivity(intent);
+            }
+        });
+        Button SearchaA = (Button) findViewById(R.id.button9);
+        SearchaA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Search.this, SearchA.class);
                 startActivity(intent);
             }
         });
 
 
-        
-
-
         //選單
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
-        final String[] lunch = { "台北市", "高雄市","新北市", "台中市"};
-        ArrayAdapter<String> lunchList = new ArrayAdapter<>(Search.this,
-                android.R.layout.simple_spinner_dropdown_item,
-                lunch);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+        Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+        final String[] lunch = {"台北市", "高雄市", "新北市", "台中市", "臺南市", "新竹市", "桃園市", "宜蘭市", "苗栗市", "基隆市"};
+        ArrayAdapter<String> lunchList = new ArrayAdapter<>(Search.this, android.R.layout.simple_spinner_dropdown_item, lunch);
+
+        final String[] lunch2 = {"99萬↓", "100萬-499萬", "500萬-999萬", "1000萬"};
+        ArrayAdapter<String> lunchList2 = new ArrayAdapter<>(Search.this, android.R.layout.simple_spinner_dropdown_item, lunch2);
+
+        final String[] lunch3 = {"100↓", "100-499", "500-999", "1000↑"};
+        ArrayAdapter<String> lunchList3 = new ArrayAdapter<>(Search.this, android.R.layout.simple_spinner_dropdown_item, lunch3);
         spinner.setAdapter(lunchList);
-
-
+        spinner2.setAdapter(lunchList2);
+        spinner3.setAdapter(lunchList3);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -184,4 +227,7 @@ public class Search extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }

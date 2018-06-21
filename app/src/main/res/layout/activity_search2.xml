@@ -70,7 +70,7 @@
                         android:layout_height="23dp"
                         android:layout_margin="15px"
                         android:text="640000"
-                        />
+                         />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -357,7 +357,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="23dp"
                         android:layout_margin="15px"
-                        />
+                         />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -428,7 +428,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="23dp"
                         android:layout_margin="15px"
-                        />
+                         />
 
                     <TextView
                         android:id="@+id/textView17"

@@ -87,6 +87,15 @@ public class suggestion extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        Button welcome = (Button)findViewById(R.id.button8);
+        welcome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(suggestion.this , Welcome.class);
+                startActivity(intent);
+            }
+        });
 
 
 

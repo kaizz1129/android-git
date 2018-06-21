@@ -39,17 +39,16 @@
             android:label="@string/title_activity_history"
             android:theme="@style/FaPiWu_GO" />
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/FaPiWu_GO" />
-        <activity
             android:name=".forum"
             android:label="@string/title_activity_forum"
             android:theme="@style/FaPiWu_GO" />
         <activity
             android:name=".suggestion"
             android:label="@string/title_activity_suggestion"
-            android:theme="@style/FaPiWu_GO"></activity>
+            android:theme="@style/FaPiWu_GO" />
+        <activity android:name=".testpage" />
+        <activity android:name=".SearchA" />
+        <activity android:name=".sssss"></activity>
     </application>
 
 </manifest>

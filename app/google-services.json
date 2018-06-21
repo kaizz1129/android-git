@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "566773612842",
+    "firebase_url": "https://fapiwu-4606f.firebaseio.com",
+    "project_id": "fapiwu-4606f",
+    "storage_bucket": "fapiwu-4606f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566773612842:android:13cde179f77dbdca",
+        "android_client_info": {
+          "package_name": "fcu.fapiwu_go"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566773612842-iifd3bc7o5bv09t8up0bn7lnaouq010o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fcu.fapiwu_go",
+            "certificate_hash": "5e998b8a05b062dcf2baa90b1accc0d6aec4abea"
+          }
+        },
+        {
+          "client_id": "566773612842-d9n9874u9cdsu65u58cjsv8oigngupvh.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "566773612842-d9n9874u9cdsu65u58cjsv8oigngupvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwZ7siq_ZvXM4s8hZ1sK8SgtCx9GEVYn0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566773612842-d9n9874u9cdsu65u58cjsv8oigngupvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
